@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>NOVA-X | Nave Estelar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="menu-container" id="mainMenu">
+  <div class="menu-bg"></div>
+  
+<!-- NAVE A LA DERECHA (MENÚ) -->
+<div class="menu-right-image">
+  <img src="assets/images/nave-menu.png" alt="Nave Estelar Nova-X">
+</div>
+  
+  <div class="menu-panel">
+    <div class="game-title"><h1>NOVA-X</h1></div>
+    <div class="slogan"><p>⚡ ÁGIL · TECNOLÓGICA · ÚNICA · <span class="highlight">DISEÑADA PARA SOBREVIVIR</span> ⚡</p></div>
+    
+    <div class="menu-stats">
+      <p>🪙 MONEDAS</p>
+      <p><span id="menuCoins">0</span></p>
+    </div>
+    
+    <div class="menu-stats">
+      <p>🏆 MEJOR NIVEL</p>
+      <p><span id="menuBestLevel">1</span></p>
+    </div>
+    
+    <div class="menu-buttons">
+      <button class="menu-btn primary" id="btnStartMission"> </button>
+      <button class="menu-btn" id="btnShop">🛒 TIENDA</button>
+      <button class="menu-btn" id="btnHangar">⚙️ HANGAR</button>
+      <button class="menu-btn" id="btnOptions">⚙️ OPCIONES</button>
+      <button class="menu-btn" id="btnExit">🔴 SALIR</button>
+    </div>
+    <div class="menu-footer">◢ NOVA STRIKE SYSTEM ◣<br>v1.0.0 // GANA MIENTRAS JUEGAS</div>
+  </div>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+<div class="game-hud" id="gameHud" style="display: none;">
+  <div class="lives">❤️ <span id="hudLives">1</span></div>
+  <div class="level">🏆 <span id="hudLevel">1</span></div>
+  <div class="score">💀 <span id="hudScore">0</span></div>
+  <div class="coins">🪙 <span id="hudCoins">0</span></div>
+  <div class="time">⏱️ <span id="hudTime">00:00</span></div>
+  <div class="income">💰 +<span id="hudIncomeRate">6</span>/min</div>
+  <div class="next-level">⬆️ <span id="hudNextLevel">60</span>s</div>
+</div>
+
+<!-- TIENDA -->
+<div id="shopScreen" class="sub-screen">
+  <button class="close-sub" id="closeShop">✖</button>
+  <div class="sub-panel">
+    <h2>🛒 TIENDA</h2>
+    <div class="player-stats"><p>🪙 TUS MONEDAS: <span id="shopCoins">0</span></p></div>
+    <div id="shopList"></div>
+    <button class="back-menu-btn" id="backFromShop">◄ VOLVER</button>
+  </div>
+</div>
+
+<!-- HANGAR -->
+<div id="hangarScreen" class="sub-screen">
+  <button class="close-sub" id="closeHangar">✖</button>
+  <div class="sub-panel">
+    <h2>⚙️ HANGAR</h2>
+    <div class="player-stats"><p>🪙 MONEDAS: <span id="hangarCoins">0</span></p></div>
+    <div id="hangarList"></div>
+    <button class="back-menu-btn" id="backFromHangar">◄ VOLVER</button>
+  </div>
+</div>
+
+<!-- OPCIONES -->
+<div id="optionsScreen" class="sub-screen">
+  <button class="close-sub" id="closeOptions">✖</button>
+  <div class="sub-panel">
+    <h2>⚙️ OPCIONES</h2>
+    <div style="padding:15px">
+      <p style="color:#00d4ff; margin:10px 0">🎮 MÚSICA: <input type="range" id="musicVol" min="0" max="1" step="0.1" value="0.3"></p>
+      <p style="color:#00d4ff; margin:10px 0">🔊 EFECTOS: <input type="range" id="sfxVol" min="0" max="1" step="0.1" value="0.5"></p>
+      <button id="resetDataBtn" style="margin-top:15px; background:#ff3366; border:none; padding:10px; color:#fff; border-radius:10px; cursor:pointer; width:100%; font-weight:bold;">⚠️ REINICIAR PROGRESO</button>
+    </div>
+    <button class="back-menu-btn" id="backFromOptions">◄ VOLVER</button>
+  </div>
+</div>
+
+<div id="toastMsg" class="toast-msg">✨ Acción completada</div>
+
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
